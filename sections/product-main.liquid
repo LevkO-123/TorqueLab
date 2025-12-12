@@ -1,0 +1,66 @@
+<section class="container fade-up">
+  <div class="section-card" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:24px; align-items:start;">
+    <div>
+      {% if product.media.size > 0 %}
+        {% for media in product.media limit: 3 %}
+          <div style="margin-bottom:12px; border-radius:12px; overflow:hidden;">
+            {{ media | media_tag: class: 'product-media', image_size: '720x' }}
+          </div>
+        {% endfor %}
+      {% else %}
+        <img src="{{ 'banner-brakes.jpg' | asset_url }}" alt="{{ product.title }}">
+      {% endif %}
+    </div>
+    <div>
+      <div class="badges" style="gap:6px; margin-bottom:10px;">
+        <span class="badge">Fast Shipping</span>
+        <span class="badge">In Stock</span>
+        <span class="badge">Workshop Approved</span>
+      </div>
+      <h1 class="section-title">{{ product.title }}</h1>
+      <p class="section-subtitle">{{ product.vendor }}</p>
+      {% render 'price', product: product %}
+      <form method="post" action="/cart/add">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+        <button class="btn" type="submit">Add to cart</button>
+      </form>
+      <div class="tabs" style="margin-top:16px;">
+        <details open>
+          <summary>Description</summary>
+          <div class="tab-content">{{ product.description | default: 'High-performance component tuned for reliability and fit.' }}</div>
+        </details>
+        <details>
+          <summary>Fitment & Specs</summary>
+          <div class="tab-content">
+            <ul>
+              <li>Vehicle fitment: sample list (e.g., Mustang GT 2018-2024)</li>
+              <li>Material: High-temp rated components</li>
+              <li>Includes install hardware</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>Shipping & Returns</summary>
+          <div class="tab-content">Most orders ship within 1–3 business days from US warehouses. 30-day hassle-free returns on new items.</div>
+        </details>
+        <details>
+          <summary>Installation Tips</summary>
+          <div class="tab-content">Torque specs, bedding procedures, and workshop notes included in the box.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+  <div class="sticky-atc">
+    <div>{{ product.title }}</div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      {% render 'price', product: product %}
+      <a class="btn" href="#">Add to cart</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Product main",
+  "settings": []
+}
+{% endschema %}

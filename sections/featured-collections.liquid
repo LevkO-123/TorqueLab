@@ -1,0 +1,23 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <h2 class="section-title">Workshop-grade collections</h2>
+    <p class="section-subtitle">Start with the essentials. Each category is curated for reliability, performance, and value.</p>
+    <div class="grid grid-4">
+      {% assign collections = 'Brakes,Suspension & Steering,Exhaust & Intake,Engine & Drivetrain,Lighting & Electrical,Wheels & Accessories,Garage Essentials' | split: ',' %}
+      {% for title in collections %}
+        <div class="card">
+          <div style="aspect-ratio: 4/3; background: url({{ 'banner-' | append: title | handleize | append: '.jpg' | asset_url }}), linear-gradient(135deg, rgba(255,59,47,0.12), rgba(255,122,26,0.06)); background-size: cover; border-radius: 10px; margin-bottom: 12px;"></div>
+          <h3>{{ title }}</h3>
+          <p class="section-subtitle">Performance-focused picks for {{ title | downcase }}.</p>
+          <a class="btn secondary" href="/collections/{{ title | handleize }}">Shop {{ title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Featured collections",
+  "settings": []
+}
+{% endschema %}

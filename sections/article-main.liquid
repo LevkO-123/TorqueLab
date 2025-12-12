@@ -1,0 +1,13 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <h1 class="section-title">{{ article.title }}</h1>
+    <p class="section-subtitle">{{ article.published_at | date: '%B %d, %Y' }}</p>
+    <div class="section-subtitle" style="color: var(--text-primary);">{{ article.content }}</div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Article",
+  "settings": []
+}
+{% endschema %}

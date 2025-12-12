@@ -1,0 +1,20 @@
+<section class="container fade-up">
+  <div class="section-card" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:20px; align-items:center;">
+    <div>
+      <h2 class="section-title">About TorqueLab Parts</h2>
+      <p class="section-subtitle">Born from a real performance workshop, we source parts we trust on our own builds. Each catalog addition is tested for fit, finish, and durability.</p>
+      <div class="bullets">
+        <span class="badge">Dyno & track tested</span>
+        <span class="badge">Fitment documentation</span>
+        <span class="badge">Tech support from real builders</span>
+      </div>
+    </div>
+    <div style="background:url({{ 'workshop-detail.jpg' | asset_url }}) center/cover no-repeat; border-radius:12px; min-height:220px;"></div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "About intro",
+  "settings": []
+}
+{% endschema %}

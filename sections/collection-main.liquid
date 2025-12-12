@@ -1,0 +1,36 @@
+<section class="container fade-up">
+  <div class="section-card">
+    {% render 'breadcrumbs' %}
+    <h1 class="section-title">{{ collection.title }}</h1>
+    <p class="section-subtitle">{{ collection.description | default: 'Performance-focused assortment built for your next job.' }}</p>
+    <div style="display:grid; grid-template-columns: 260px 1fr; gap:20px; align-items:start;" class="@media">
+      <aside style="border:1px solid var(--border); border-radius:12px; padding:16px;">
+        <h4>Filter</h4>
+        <label class="section-subtitle"><input type="checkbox"> Part type</label><br>
+        <label class="section-subtitle"><input type="checkbox"> Brand</label><br>
+        <label class="section-subtitle"><input type="checkbox"> Price range</label><br>
+        <label class="section-subtitle"><input type="checkbox"> Rating</label>
+      </aside>
+      <div>
+        <div class="grid grid-3">
+          {% paginate collection.products by 12 %}
+            {% for product in collection.products %}
+              {% render 'product-card', product: product %}
+            {% else %}
+              {% for i in (1..6) %}
+                {% render 'product-card' %}
+              {% endfor %}
+            {% endfor %}
+          {% render 'pagination' %}
+          {% endpaginate %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Collection main",
+  "settings": []
+}
+{% endschema %}

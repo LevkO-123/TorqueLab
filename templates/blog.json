@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "header": {"type": "page-header", "settings": {}},
+    "blog": {"type": "blog-preview", "settings": {}}
+  },
+  "order": ["header","blog"]
+}

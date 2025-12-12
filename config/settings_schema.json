@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {"type": "text", "id": "brand_tagline", "label": "Tagline", "default": "Online Performance Workshop"},
+      {"type": "color", "id": "accent", "label": "Accent color", "default": "#ff3b2f"}
+    ]
+  }
+]

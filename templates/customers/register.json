@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "register": {"type": "register-form", "settings": {}}
+  },
+  "order": ["register"]
+}

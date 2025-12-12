@@ -1,0 +1,37 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div>
+        <h2 class="section-title">Garage Guides</h2>
+        <p class="section-subtitle">Technical insights and install tips straight from the TorqueLab workshop.</p>
+      </div>
+      <a class="btn secondary" href="/blogs/garage-guides">View all guides</a>
+    </div>
+    <div class="grid grid-3">
+      {% assign blog_handle = section.settings.blog | default: 'garage-guides' %}
+      {% for article in blogs[blog_handle].articles limit: 3 %}
+        <article class="card">
+          <h3>{{ article.title }}</h3>
+          <p class="section-subtitle">{{ article.excerpt | strip_html | truncate: 110 }}</p>
+          <a class="btn secondary" href="{{ article.url }}">Read guide</a>
+        </article>
+      {% else %}
+        {% for i in (1..3) %}
+          <article class="card">
+            <h3>How to choose the right brake kit</h3>
+            <p class="section-subtitle">Dial in pads, rotors, and hardware that match your driving style.</p>
+            <a class="btn secondary" href="#">Read guide</a>
+          </article>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Blog preview",
+  "settings": [
+    {"type":"blog","id":"blog","label":"Blog"}
+  ]
+}
+{% endschema %}

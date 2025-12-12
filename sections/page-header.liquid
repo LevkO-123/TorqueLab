@@ -1,0 +1,14 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <h1 class="section-title">{{ page.title | default: 'TorqueLab Parts' }}</h1>
+    {% if page.content != blank %}
+      <p class="section-subtitle">{{ page.content | strip_html | truncate: 200 }}</p>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Page header",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,23 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <h1 class="section-title">Account</h1>
+    <p class="section-subtitle">Welcome back, {{ customer.first_name }}.</p>
+    <h3>Orders</h3>
+    {% if customer.orders.size > 0 %}
+      <ul>
+        {% for order in customer.orders %}
+          <li class="card" style="margin-bottom:10px; padding:12px;">Order {{ order.name }} — {{ order.created_at | date: '%b %d, %Y' }} — {{ order.financial_status }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No orders yet.</p>
+    {% endif %}
+    <a class="btn secondary" href="/account/logout">Logout</a>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Account",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,60 @@
+<section class="site-header">
+  <div class="inner">
+    <div class="brand">
+      <div class="logo">TorqueLab <span>Parts</span></div>
+      <div class="tagline">Online Performance Workshop</div>
+    </div>
+    <button class="icon-btn mobile-menu-toggle" aria-label="Open navigation">☰</button>
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="#shop-by-vehicle">Shop by Vehicle</a>
+      <a href="/collections/brakes">Brakes</a>
+      <a href="/collections/suspension-steering">Suspension &amp; Steering</a>
+      <a href="/collections/exhaust-intake">Exhaust &amp; Intake</a>
+      <a href="/collections/engine-drivetrain">Engine &amp; Drivetrain</a>
+      <a href="/collections/lighting-electrical">Lighting &amp; Electrical</a>
+      <a href="/collections/wheels-accessories">Wheels &amp; Accessories</a>
+      <a href="/collections/garage-essentials">Garage Essentials</a>
+      <a href="/blogs/garage-guides">Garage Guides</a>
+      <a href="/pages/about">About / Workshop</a>
+      <a href="/pages/contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-bar">
+        <button class="icon-btn" aria-label="Search">🔍</button>
+        <div class="search-dropdown">
+          {% render 'search-bar' %}
+        </div>
+      </div>
+      <a class="icon-btn" href="/account" aria-label="Account">👤</a>
+      <button class="icon-btn" data-mini-cart-trigger aria-label="Cart">
+        🛒<span class="count">{{ cart.item_count }}</span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-drawer">
+    <div class="panel">
+      <nav>
+        <a href="/">Home</a>
+        <a href="#shop-by-vehicle">Shop by Vehicle</a>
+        <a href="/collections/brakes">Brakes</a>
+        <a href="/collections/suspension-steering">Suspension &amp; Steering</a>
+        <a href="/collections/exhaust-intake">Exhaust &amp; Intake</a>
+        <a href="/collections/engine-drivetrain">Engine &amp; Drivetrain</a>
+        <a href="/collections/lighting-electrical">Lighting &amp; Electrical</a>
+        <a href="/collections/wheels-accessories">Wheels &amp; Accessories</a>
+        <a href="/collections/garage-essentials">Garage Essentials</a>
+        <a href="/blogs/garage-guides">Garage Guides</a>
+        <a href="/pages/about">About / Workshop</a>
+        <a href="/pages/contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+  {% render 'mini-cart' %}
+</section>
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}

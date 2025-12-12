@@ -1,0 +1,7 @@
+{
+  "sections": {
+    "product": {"type": "product-main", "settings": {}},
+    "featured-products": {"type": "featured-products", "settings": {}}
+  },
+  "order": ["product", "featured-products"]
+}

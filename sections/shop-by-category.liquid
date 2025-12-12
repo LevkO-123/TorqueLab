@@ -1,0 +1,21 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <h2 class="section-title">Shop by category</h2>
+    <div class="grid grid-3">
+      {% assign cats = 'Brake Kits,Coilovers & Springs,Exhaust Systems,Intakes & Filters,Lighting Upgrades,Garage Tools' | split: ',' %}
+      {% for cat in cats %}
+        <div class="card">
+          <h3>{{ cat }}</h3>
+          <p class="section-subtitle">Curated parts for {{ cat | downcase }}.</p>
+          <a class="btn secondary" href="/collections/{{ cat | handleize }}">Shop {{ cat }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Shop by category",
+  "settings": []
+}
+{% endschema %}
