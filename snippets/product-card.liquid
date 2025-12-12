@@ -1,0 +1,19 @@
+<div class="product-card card">
+  <div class="image">
+    <div class="badges">
+      <span class="badge">Fast Shipping</span>
+      <span class="badge">Workshop Pick</span>
+    </div>
+    {% if product.featured_image %}
+      <img src="{{ product.featured_image | img_url: '540x' }}" alt="{{ product.title }}">
+    {% else %}
+      <img src="{{ 'banner-brakes.jpg' | asset_url }}" alt="Placeholder">
+    {% endif %}
+  </div>
+  <h3>{{ product.title | default: 'Performance Part' }}</h3>
+  <p class="section-subtitle">{{ product.vendor | default: 'TorqueLab Select' }}</p>
+  <div>
+    {% render 'price', product: product %}
+  </div>
+  <a class="btn" href="{{ product.url | default: '#' }}">View product</a>
+</div>

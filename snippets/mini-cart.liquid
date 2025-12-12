@@ -1,0 +1,28 @@
+<div class="mobile-drawer" data-mini-cart>
+  <div class="panel">
+    <div style="display:flex; justify-content: space-between; align-items:center; margin-bottom:12px;">
+      <h3>Cart</h3>
+      <button class="icon-btn" data-mini-cart-close aria-label="Close">✕</button>
+    </div>
+    {% if cart.item_count > 0 %}
+      <ul>
+        {% for item in cart.items %}
+          <li style="margin-bottom:10px; display:flex; gap:10px; align-items:center;">
+            {% if item.image %}<img src="{{ item.image | img_url: '120x' }}" alt="{{ item.title }}" style="width:60px; height:60px; object-fit:cover; border-radius:8px;">{% endif %}
+            <div>
+              <div>{{ item.product.title }}</div>
+              <div class="price">{{ item.final_line_price | money }}</div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      <div style="display:flex; justify-content:space-between; margin:12px 0;">
+        <strong>Total</strong>
+        <span class="price">{{ cart.total_price | money }}</span>
+      </div>
+      <a class="btn" href="/cart">Checkout</a>
+    {% else %}
+      <p>Your cart is currently empty.</p>
+    {% endif %}
+  </div>
+</div>

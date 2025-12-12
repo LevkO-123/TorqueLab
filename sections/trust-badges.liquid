@@ -1,0 +1,20 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <h2 class="section-title">Confidence built in</h2>
+    <div class="trust">
+      {% assign items = 'Fast US Shipping,Quality Tested Parts,Fitment Confidence,Secure Checkout,Hassle-Free Returns' | split: ',' %}
+      {% for item in items %}
+        <div class="item">
+          <span>✅</span>
+          <div>{{ item }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Trust badges",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,17 @@
+<section class="container fade-up">
+  <div class="section-card" style="text-align:center;">
+    <h2 class="section-title">Join the TorqueLab Pit Crew</h2>
+    <p class="section-subtitle">Get early access to product drops, install tips, and exclusive offers.</p>
+    <form action="/contact#newsletter" method="post" class="newsletter-form" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <input type="hidden" name="form_type" value="customer" />
+      <input type="email" name="contact[email]" placeholder="Email" required style="padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:#0f1116; color:#fff; min-width:260px;">
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": []
+}
+{% endschema %}

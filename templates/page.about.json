@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "header": {"type": "page-header", "settings": {}},
+    "about": {"type": "about-intro", "settings": {}},
+    "image": {"type": "image-with-text", "settings": {}},
+    "trust": {"type": "trust-badges", "settings": {}},
+    "cta": {"type": "simple-cta", "settings": {}}
+  },
+  "order": ["header","about","image","trust","cta"]
+}

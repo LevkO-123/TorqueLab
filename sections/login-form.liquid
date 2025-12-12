@@ -1,0 +1,17 @@
+<section class="container fade-up">
+  <div class="section-card" style="max-width:520px; margin:0 auto;">
+    <h1 class="section-title">Login</h1>
+    {% form 'customer_login' %}
+      <input type="email" name="customer[email]" placeholder="Email" required style="width:100%; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1116; color:#fff; margin-bottom:12px;">
+      <input type="password" name="customer[password]" placeholder="Password" required style="width:100%; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1116; color:#fff; margin-bottom:12px;">
+      <button class="btn" type="submit">Sign in</button>
+    {% endform %}
+    <p class="section-subtitle">New here? <a href="/account/register">Create account</a></p>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Login form",
+  "settings": []
+}
+{% endschema %}

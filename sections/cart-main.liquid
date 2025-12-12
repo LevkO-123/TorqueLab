@@ -1,0 +1,31 @@
+<section class="container fade-up">
+  <div class="section-card">
+    <h1 class="section-title">Cart</h1>
+    {% if cart.item_count > 0 %}
+      <div class="grid" style="gap:12px;">
+        {% for item in cart.items %}
+          <div class="card" style="display:flex; gap:12px; align-items:center;">
+            {% if item.image %}<img src="{{ item.image | img_url: '160x' }}" alt="{{ item.title }}" style="width:90px; height:90px; object-fit:cover; border-radius:10px;">{% endif %}
+            <div>
+              <div>{{ item.product.title }}</div>
+              <div class="price">{{ item.final_line_price | money }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-top:14px;">
+        <strong>Subtotal</strong>
+        <span class="price">{{ cart.total_price | money }}</span>
+      </div>
+      <a class="btn" href="/checkout" style="margin-top:12px;">Checkout</a>
+    {% else %}
+      <p>Your cart is empty.</p>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Cart",
+  "settings": []
+}
+{% endschema %}

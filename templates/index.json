@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main-hero": {"type": "main-hero", "settings": {}},
+    "shop-by-vehicle": {"type": "shop-by-vehicle", "settings": {}},
+    "featured-collections": {"type": "featured-collections", "settings": {}},
+    "featured-products": {"type": "featured-products", "settings": {}},
+    "promo-banners": {"type": "promo-banners", "settings": {}, "blocks": {"banner1": {"type": "banner"}, "banner2": {"type": "banner"}}},
+    "trust": {"type": "trust-badges", "settings": {}},
+    "image-with-text": {"type": "image-with-text", "settings": {}},
+    "video-banner": {"type": "video-banner", "settings": {}},
+    "blog-preview": {"type": "blog-preview", "settings": {}},
+    "newsletter": {"type": "newsletter", "settings": {}},
+    "cta": {"type": "simple-cta", "settings": {}}
+  },
+  "order": ["main-hero","shop-by-vehicle","featured-collections","featured-products","promo-banners","trust","image-with-text","video-banner","blog-preview","newsletter","cta"]
+}
